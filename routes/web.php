@@ -9,6 +9,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/register', [RegisterController::class, 'create'])->name('registeruser.index');
-Route::get('/login', [SessionController::class, 'create'])->name('login.index');
+Route::get('/register', [RegisterController::class, 'create'])
+->name('registeruser.index');
+
+
+Route::post('/register', [RegisterController::class, 'store'])
+->name('registeruser.store');
+
+Route::get('/login', [SessionController::class, 'create'])
+->name('login.index');
 
