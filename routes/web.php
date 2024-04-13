@@ -12,7 +12,6 @@ Route::get('/', function () {
 Route::get('/register', [RegisterController::class, 'create'])
 ->name('registeruser.index');
 
-
 Route::post('/register', [RegisterController::class, 'store'])
 ->name('registeruser.store');
 
@@ -21,6 +20,18 @@ Route::get('/login', [SessionController::class, 'create'])
 
 Route::post('/login', [SessionController::class, 'store'])
 ->name('login.store');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->name('dashboard');
+
+Route::delete('/dashboard/users/{id}', [DashboardController::class, 'destroy'])
+    ->name('users.destroy');
+
+Route::get('/dashboard/users/{id}/edit', [DashboardController::class, 'edit'])
+    ->name('users.edit');
+    
+Route::put('/dashboard/users/{id}', [DashboardController::class, 'update'])
+    ->name('users.update');
 
 Route::get('/logout', [SessionController::class, 'destroy'])
 
