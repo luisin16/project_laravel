@@ -30,5 +30,15 @@ class DashboardController extends Controller
         }
         
     }
+    public function edit($id)
+{
+    $user = User::find($id);
+    
+    if (!$user) {
+        return response()->json(['message' => 'Usuario no encontrado.'], 404);
+    }
+
+    return view('layouts.edit', compact('user'));
+}
 }
 

@@ -29,6 +29,9 @@
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-600 hover:bg-red-600 text-white font-semibold px-4 rounded-md">Eliminar</button>
                         </form>
+
+                        <a href="{{ route('users.edit', $user->id) }}" class="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-4 rounded-md ml-2">Editar</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
