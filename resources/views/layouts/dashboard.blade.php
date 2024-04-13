@@ -29,7 +29,6 @@
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-600 hover:bg-red-600 text-white font-semibold px-4 rounded-md">Eliminar</button>
                         </form>
-
                         <a href="{{ route('users.edit', $user->id) }}" class="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-4 rounded-md ml-2">Editar</a>
                         </td>
                     </tr>
@@ -39,5 +38,8 @@
     </div>
 </div>
 
+<div class="flex justify-end mt-4">
+    <a href="{{ route('products.index') }}" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-md">Subir Productos</a>
+</div>
 
 @endsection

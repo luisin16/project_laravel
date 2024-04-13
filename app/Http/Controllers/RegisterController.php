@@ -11,18 +11,20 @@ class RegisterController extends Controller
         return view('auth.registeruser');
     }
 
-    public function store() {
-
-        $this->validate(request(), [
+    public function store(Request $request) {
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed',
         ]);
 
-        $user = User::create(request(['name', 'email', 'password']));
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+        ]);
 
         auth()->login($user);
-        return redirect()->to('/');
+        return redirect()->route('dashboard');
     }
-
 }

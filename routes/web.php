@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('home');
 });
-
 
 Route::get('/register', [RegisterController::class, 'create'])
 ->name('registeruser.index');
@@ -32,7 +34,9 @@ Route::get('/dashboard/users/{id}/edit', [DashboardController::class, 'edit'])
     
 Route::put('/dashboard/users/{id}', [DashboardController::class, 'update'])
     ->name('users.update');
-    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
 
 Route::get('/logout', [SessionController::class, 'destroy'])
 

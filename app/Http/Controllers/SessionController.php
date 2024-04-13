@@ -17,7 +17,7 @@ class SessionController extends Controller
                 'message' => 'The email or password is incorrect, please try again',
             ]);
         }
-        return redirect()->to('/');
+        return redirect()->route('dashboard');
     }
 
     public function destroy() {
