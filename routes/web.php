@@ -32,6 +32,7 @@ Route::get('/dashboard/users/{id}/edit', [DashboardController::class, 'edit'])
     
 Route::put('/dashboard/users/{id}', [DashboardController::class, 'update'])
     ->name('users.update');
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 Route::get('/logout', [SessionController::class, 'destroy'])
 
