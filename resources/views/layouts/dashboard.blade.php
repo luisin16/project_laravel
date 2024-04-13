@@ -24,6 +24,11 @@
                         <td class="py-3 px-4">{{ $user->name }}</td>
                         <td class="py-3 px-4">{{ $user->email }}</td>
                         <td class="py-3 px-4">
+                        <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-600 hover:bg-red-600 text-white font-semibold px-4 rounded-md">Eliminar</button>
+                        </form>
                     </tr>
                 @endforeach
             </tbody>
