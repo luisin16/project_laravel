@@ -24,12 +24,12 @@
                         <td class="py-3 px-4">{{ $user->name }}</td>
                         <td class="py-3 px-4">{{ $user->email }}</td>
                         <td class="py-3 px-4">
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 </div>
+
 
 @endsection
